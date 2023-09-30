@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "my_program"
+version = "0.0.1"
+dependencies = [
+    'importlib-metadata; python_version=="3.10"',
+    "torch==2.0.1",
+    "click==8.1.7",
+    "numpy"
+]
+
+[project.scripts]
+my_program = "my_library.cli:run_cli"
+
+[tool.setuptools]
+packages = ["my_library"]
+
